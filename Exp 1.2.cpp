@@ -12,7 +12,7 @@ cin>>rows;
 cout<<"Enter columns:";
 cin>>cols;
 
-int a1[rows-1][cols-1], a2[rows-1][cols-1], sum[i][j], product[i][j];
+int a1[rows-1][cols-1], a2[rows-1][cols-1], sum[rows- 1][cols-1], product[rows-1][cols-1];
 
 cout<<"Enter data into first matrix:"<<endl;
 for (i=0; i<=rows-1; i++)
