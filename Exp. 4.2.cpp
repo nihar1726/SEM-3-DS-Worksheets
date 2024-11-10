@@ -1,5 +1,4 @@
-
-
+1
 // Simple C++ program to add two polynomials
 #include <iostream>
 using namespace std;
