@@ -79,28 +79,67 @@ void InOrder(node *newnode)
     InOrder(newnode->right);
 }
 
+node *search_tree(node *parent, int element)
+{
+    if (parent == nullptr || parent->data == element)
+    {
+        return parent;
+    }
+
+    if (element > parent->data)
+    {
+        return search_tree(parent->right, element);
+    }
+
+    if (element < parent->data)
+    {
+        return search_tree(parent->left, element);
+    }
+}
+
 int main()
 {
-    node *root = new node(5);
+    node *root = new node(9);
 
-    InsertRecursively(root, 6);
-    InsertRecursively(root, 3);
-    InsertRecursively(root, 45);
-    InsertRecursively(root, 55);
+    InsertRecursively(root, 56);
+    InsertRecursively(root, 52);
+    InsertRecursively(root, 42);
+    InsertRecursively(root, 48);
+    InsertRecursively(root, 61);
+    InsertRecursively(root, 15);
+
+    InsertRecursively(root, -1);
+    InsertRecursively(root, 156);
+    InsertRecursively(root, 13);
+    InsertRecursively(root, -89);
+    // InsertRecursively(root, -45);
     InsertRecursively(root, 1);
-    InsertRecursively(root, 8);
 
-    cout << "POST ORDER TRAVERSAL: " << endl;
+    cout << "PRE ORDER TRAVERSAL: " << endl;
     PreOrder(root);
     cout << endl;
 
-    cout << "PreORDER TRAVERSAL: " << endl;
+    cout << "POSTORDER TRAVERSAL: " << endl;
     PostOrder(root);
     cout << endl;
 
     cout << "InORDER TRAVERSAL: " << endl;
     InOrder(root);
     cout << endl;
+
+    int ele;
+    cout << "\nEnter element you wish to find: ";
+    cin >> ele;
+
+    node *result = search_tree(root, ele);
+    if (result != nullptr)
+    {
+        cout << "Found! " << result->data << endl;
+    }
+    else
+    {
+        cout << "Could not find! " << ele << endl;
+    }
 
     return 0;
 }
