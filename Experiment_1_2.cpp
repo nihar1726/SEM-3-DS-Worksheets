@@ -7,9 +7,9 @@ using namespace std;
 int main()
 {
 int rows, cols, i, j ,k;
-cout<<"Enter rows:";
+cout<<"Enter rows: ";
 cin>>rows;
-cout<<"Enter columns:";
+cout<<"Enter columns: ";
 cin>>cols;
 
 int a1[rows-1][cols-1], a2[rows-1][cols-1], sum[rows- 1][cols-1], product[rows-1][cols-1];
