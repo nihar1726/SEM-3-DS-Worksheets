@@ -114,7 +114,7 @@ int main()
     InsertRecursively(root, -89);
     // InsertRecursively(root, -45);
     InsertRecursively(root, 1);
-
+    
     cout << "PRE ORDER TRAVERSAL: " << endl;
     PreOrder(root);
     cout << endl;
